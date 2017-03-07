@@ -1,0 +1,86 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CustomerMenu
+{
+    class Program
+    {
+        private static int choice;
+        private static bool running = false;
+
+        static void Main(string[] args)
+        {
+            do
+            {
+
+                displayMenue();
+                displayHint();
+                try
+                {
+                    choice = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    continue;
+                }
+                switch (choice)
+                {
+                    case 1:
+                        running = true;
+                        break;
+
+                    case 2:
+                        running = true;
+                        break;
+
+                    case 3:
+                        running = true;
+                        break;
+
+                    case 4:
+                        quit();
+
+                        break;
+
+                    default:
+                        Console.WriteLine("The option is not available! Please enter another option(1 to 4):");
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        running = false;
+                        break;
+                }
+
+            } while (!running);
+        }
+
+        static void displayMenue()
+        {
+            Console.WriteLine("Welcome to Marvellous Magic (Retail - NAME)");
+            Console.WriteLine("=============================================");
+            Console.WriteLine("\t 1. Display Products");
+            Console.WriteLine("\t 2. Display Workshops");
+            Console.WriteLine("\t 3. Return To Main Menu");
+            Console.WriteLine("\t 4. EXIT");
+        }
+
+        static void displayHint()
+        {
+
+            Console.WriteLine("Enter an option:");
+            Console.WriteLine("(where the user enters a number from 1 to 4, to select an option)");
+        }
+
+        static void quit()
+        {
+            Environment.Exit(0);
+        }
+    }
+}
