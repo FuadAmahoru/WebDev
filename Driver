@@ -12,6 +12,7 @@ namespace Assignment1
         {
             MainMenu driver = new MainMenu();
             driver.displayMainMenu();
+            Console.ReadLine();
         }
     }
 }
