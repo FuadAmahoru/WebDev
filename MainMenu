@@ -6,14 +6,16 @@ using System.Threading.Tasks;
 
 namespace Assignment1
 {
-    class MainMenu
+   public class MainMenu
     {
-        private static int choice;
-        private static bool running = false;
 
-  
-       public  void displayMainMenu()
+
+
+        public void displayMainMenu()
         {
+
+            int choice = 0;
+              //bool running = false;
 
             do
             {
@@ -36,17 +38,17 @@ namespace Assignment1
                 {
                     case 1:
                         Owner.displayOwnerMenu();
-                        running = true;
+                       // running = true;
                         break;
 
                     case 2:
                         Franchise.displayFranchiseMenu();
-                        running = true;
+                        //running = true;
                         break;
 
                     case 3:
                         Customer.displayCustomerMenu();
-                        running = true;
+                       // running = true;
                         break;
 
                     case 4:
@@ -59,14 +61,14 @@ namespace Assignment1
                         Console.WriteLine();
                         Console.WriteLine();
                         Console.WriteLine();
-                        running = false;
+                       // running = false;
                         break;
                 }
 
-            } while (!running);
+            } while (choice > 4 || choice <1);
         }
 
-        static void displayMenue()
+        public static void displayMenue()
         {
             Console.WriteLine("Welcome to Marvellous Magic");
             Console.WriteLine("=================================");
@@ -76,14 +78,14 @@ namespace Assignment1
             Console.WriteLine("\t\t 4. Quit");
         }
 
-        static void displayHint()
+        public static void displayHint()
         {
 
             Console.WriteLine("Enter an option:");
             Console.WriteLine("(where the user enters a number from 1 to 4, to select an option)");
         }
 
-        static void quit()
+        public static void quit()
         {
             Environment.Exit(0);
         }
