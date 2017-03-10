@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace Assignment1
 {
-    class Franchise
+    public class Franchise
     {
-        private static int option;
-        private static bool running = false;
 
+       
 
         public static void displayFranchiseMenu()
         {
+            int option = 0;
+           
             do
             {
 
@@ -35,21 +36,22 @@ namespace Assignment1
                 switch (option)
                 {
                     case 1:
-                        running = true;
+                        
                         break;
 
                     case 2:
-                        running = true;
+                       
                         break;
 
                     case 3:
-                        running = true;
+                       
                         break;
 
                     case 4:
+                        
                         MainMenu main = new MainMenu();
                         main.displayMainMenu();
-                        running = true;
+                        
                         break;
 
                     case 5:
@@ -63,15 +65,15 @@ namespace Assignment1
                         Console.WriteLine();
                         Console.WriteLine();
                         Console.WriteLine();
-                        running = false;
+                       
                         break;
                 }
 
-            } while (!running);
+            } while (option > 5 || option <1);
         }
-        
 
-        static void displayMenu()
+
+       public static void displayMenu()
         {
             Console.WriteLine("Welcome to Marvellous Magic (Franchise Holder - NAME)");
             Console.WriteLine("==========================================================");
@@ -82,14 +84,14 @@ namespace Assignment1
             Console.WriteLine("\t 5. EXIT");
         }
 
-        static void displayHint()
+        public static void displayHint()
         {
 
             Console.WriteLine("Enter your option");
             Console.WriteLine("(where the user enters a number from 1 to 5, to select an option.)");
         }
 
-        static void quit()
+       public static void quit()
         {
             Environment.Exit(0);
         }
