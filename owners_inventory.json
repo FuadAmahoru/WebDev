@@ -1,0 +1,60 @@
+[
+  {
+    "Id": 1,
+    "Name": "Aqua Water",
+    "StockLevel": 4
+  },
+  {
+    "Id": 2,
+    "Name": "Lipton Ice Tea",
+    "StockLevel": 5
+  },
+  {
+
+    "Id": 3,
+    "Name": "Bundaberg",
+    "StockLevel": 3
+  },
+  {
+
+    "Id": 4,
+    "Name": "Appletiser",
+    "StockLevel": 6
+  },
+  {
+
+    "Id": 5,
+    "Name": "Fanta",
+    "StockLevel": 2
+  },
+  {
+
+    "Id": 6,
+    "Name": "Powerade",
+    "StockLevel": 8
+  },
+  {
+
+    "Id": 7,
+    "Name": "Barista",
+    "StockLevel": 6
+  },
+  {
+
+    "Id": 8,
+    "Name": "H2Coco",
+    "StockLevel": 4
+  },
+  {
+
+    "Id": 9,
+    "Name": "Lift",
+    "StockLevel": 3
+  },
+  {
+
+    "Id": 10,
+    "Name": "Apple Juice",
+    "StockLevel": 4
+  }
+]
