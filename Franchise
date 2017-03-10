@@ -1,0 +1,97 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment1
+{
+    class Franchise
+    {
+        private static int option;
+        private static bool running = false;
+
+
+        public static void displayFranchiseMenu()
+        {
+            do
+            {
+
+                displayMenu();
+                displayHint();
+                try
+                {
+                    option = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (Exception m)
+                {
+                    Console.WriteLine(m.Message);
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    continue;
+                }
+                switch (option)
+                {
+                    case 1:
+                        running = true;
+                        break;
+
+                    case 2:
+                        running = true;
+                        break;
+
+                    case 3:
+                        running = true;
+                        break;
+
+                    case 4:
+                        MainMenu main = new MainMenu();
+                        main.displayMainMenu();
+                        running = true;
+                        break;
+
+                    case 5:
+                        quit();
+
+                        break;
+
+                    default:
+                        Console.WriteLine("The option is not available! Please enter another option(1 to 5)");
+                        Console.WriteLine("You have chosen a String!");
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        running = false;
+                        break;
+                }
+
+            } while (!running);
+        }
+        
+
+        static void displayMenu()
+        {
+            Console.WriteLine("Welcome to Marvellous Magic (Franchise Holder - NAME)");
+            Console.WriteLine("==========================================================");
+            Console.WriteLine("\t 1. Display Inventory");
+            Console.WriteLine("\t 2. Display Inventory (Treshold)");
+            Console.WriteLine("\t 3. Add New Inventory Item");
+            Console.WriteLine("\t 4. Return To Main Menu");
+            Console.WriteLine("\t 5. EXIT");
+        }
+
+        static void displayHint()
+        {
+
+            Console.WriteLine("Enter your option");
+            Console.WriteLine("(where the user enters a number from 1 to 5, to select an option.)");
+        }
+
+        static void quit()
+        {
+            Environment.Exit(0);
+        }
+    }
+}
