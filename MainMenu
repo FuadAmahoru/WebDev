@@ -6,86 +6,83 @@ using System.Threading.Tasks;
 
 namespace Assignment1
 {
-   public class MainMenu
+    class MainMenu : Menu
     {
-
-
-
-        public void displayMainMenu()
+       public MainMenu()
         {
-
-            int choice = 0;
-              //bool running = false;
-
-            do
-            {
-
-                displayMenue();
-                displayHint();
-                try
+            displayTitle("Main Menu");
+            menuItem.Add("Owner");
+            menuItem.Add("Franchise Owner");
+            menuItem.Add("Customer");
+            menuItem.Add("Quit");
+            displayList();
+            displayHint();
+            
+        }
+  
+       bool validingInput()
+        {
+            int option;
+            
+           
+                option = getInput(Console.ReadLine());
+                if (option!=-1)
                 {
-                    choice = Convert.ToInt32(Console.ReadLine());
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                    Console.WriteLine();
-                    Console.WriteLine();
-                    Console.WriteLine();
-                    continue;
-                }
-                switch (choice)
-                {
+                    
+                    switch (option)
+                 {
                     case 1:
-                        Owner.displayOwnerMenu();
-                       // running = true;
+                        Owner owner = new Owner();
+                        owner.runOwnerMenu();
                         break;
 
                     case 2:
-                        Franchise.displayFranchiseMenu();
-                        //running = true;
+                        Franchise fran = new Franchise();
+                        fran.runFranchiseMenu();
                         break;
 
                     case 3:
-                        Customer.displayCustomerMenu();
-                       // running = true;
+                        Customer cust = new Customer();
+                        cust.runCustomerMenu();
                         break;
 
                     case 4:
                         quit();
-
                         break;
 
                     default:
-                        Console.WriteLine("The option is not available! Please enter another option(1 to 4):");
+                        Console.WriteLine("The option is not available! Please enter another option(1 to {0}):",menuItem.Count);
                         Console.WriteLine();
                         Console.WriteLine();
                         Console.WriteLine();
-                       // running = false;
+                        return false;
                         break;
                 }
+                return true;
+                }else
+                {
+                    Console.WriteLine("Please enter correct value!");
+                return false;
+                }
+                
 
-            } while (choice > 4 || choice <1);
+            
         }
-
-        public static void displayMenue()
+        
+       public void runMainMenu()
         {
-            Console.WriteLine("Welcome to Marvellous Magic");
-            Console.WriteLine("=================================");
-            Console.WriteLine("\t\t 1. Owner");
-            Console.WriteLine("\t\t 2. Franchise Owner");
-            Console.WriteLine("\t\t 3. Customer");
-            Console.WriteLine("\t\t 4. Quit");
+            bool input;
+            while (true) { 
+                
+                input = validingInput();
+                if (!input)
+                {
+                    new MainMenu();
+                }
+            } 
         }
-
-        public static void displayHint()
-        {
-
-            Console.WriteLine("Enter an option:");
-            Console.WriteLine("(where the user enters a number from 1 to 4, to select an option)");
-        }
-
-        public static void quit()
+        
+       public void quit()
         {
             Environment.Exit(0);
         }
