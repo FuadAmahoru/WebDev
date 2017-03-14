@@ -11,8 +11,9 @@ namespace Assignment1
         static void Main(string[] args)
         {
             MainMenu driver = new MainMenu();
-            driver.displayMainMenu();
+            driver.runMainMenu();
             Console.ReadLine();
+          //  driver.displayMainMenu();
         }
     }
 }
