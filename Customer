@@ -6,66 +6,121 @@ using System.Threading.Tasks;
 
 namespace Assignment1
 {
-   public class Customer
+    class Customer : Menu
     {
        
+        public Customer() 
+        {  
+           displayTitle("Customer");
+            menuItem.Add("Display Products");
+            menuItem.Add("Display Workshops");
+            menuItem.Add("Return To Main Menu");
+            menuItem.Add("EXIT");
+            displayList();
+            displayHint();
+        }
 
-        private MainMenu main = new MainMenu();
-        public  static void displayCustomerMenu()
+
+        bool validingInput()
         {
-            int choice = 0;
-            
-            do
+            int option;
+
+
+            option = getInput(Console.ReadLine());
+            if (option != -1)
             {
 
-                displayMenue();
-                displayHint();
-                try
-                {
-                    choice = Convert.ToInt32(Console.ReadLine());
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                    Console.WriteLine();
-                    Console.WriteLine();
-                    Console.WriteLine();
-                    continue;
-                }
-                switch (choice)
+                switch (option)
                 {
                     case 1:
                        
+                        
                         break;
 
                     case 2:
-                      
+
                         break;
 
                     case 3:
-                        MainMenu main = new MainMenu();
-                        main.displayMainMenu();
-                        
+                        new MainMenu();
                         break;
 
                     case 4:
                         quit();
-
                         break;
 
                     default:
-                        Console.WriteLine("The option is not available! Please enter another option(1 to 4):");
+                        Console.WriteLine("The option is not available! Please enter another option(1 to {0}):", menuItem.Count);
                         Console.WriteLine();
                         Console.WriteLine();
                         Console.WriteLine();
-                       
+                        return false;
                         break;
                 }
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("Please enter correct value!");
+                return false;
+            }
 
-            } while ( choice>4 || choice <1);
+
+
         }
+        /* public static void displayCustomerMenu()
+         {
+             do
+             {
 
-       public static void displayMenue()
+                 displayMenue();
+                 displayHint();
+                 try
+                 {
+                     choice = Convert.ToInt32(Console.ReadLine());
+                 }
+                 catch (Exception e)
+                 {
+                     Console.WriteLine(e.Message);
+                     Console.WriteLine();
+                     Console.WriteLine();
+                     Console.WriteLine();
+                     continue;
+                 }
+                 switch (choice)
+                 {
+                     case 1:
+                         running = true;
+                         break;
+
+                     case 2:
+                         running = true;
+                         break;
+
+                     case 3:
+                         MainMenu main = new MainMenu();
+
+                         running = true;
+                         break;
+
+                     case 4:
+                         quit();
+
+                         break;
+
+                     default:
+                         Console.WriteLine("The option is not available! Please enter another option(1 to 4):");
+                         Console.WriteLine();
+                         Console.WriteLine();
+                         Console.WriteLine();
+                         running = false;
+                         break;
+                 }
+
+             } while (!running);
+         }
+         */
+        static void displayMenue()
         {
             Console.WriteLine("Welcome to Marvellous Magic (Retail - NAME)");
             Console.WriteLine("=============================================");
@@ -75,14 +130,21 @@ namespace Assignment1
             Console.WriteLine("\t 4. EXIT");
         }
 
-        public static void displayHint()
+        public void runCustomerMenu()
         {
+            bool input;
+            while (true)
+            {
 
-            Console.WriteLine("Enter an option:");
-            Console.WriteLine("(where the user enters a number from 1 to 4, to select an option)");
+                input = validingInput();
+                if (!input)
+                {
+                    new Customer();
+                }
+            }
         }
 
-        public static void quit()
+        void quit()
         {
             Environment.Exit(0);
         }
