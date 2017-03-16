@@ -102,11 +102,12 @@ namespace Assignment1
                     case 3:
                         Inventory invent = new Inventory();
                         invent.displayProductLines();
-                        new Owner();
+                        
                         break;
 
                     case 4:
-                        new MainMenu();
+                        MainMenu menu = new MainMenu();
+                        menu.runMainMenu();
                         break;
                     case 5:
                         quit();
