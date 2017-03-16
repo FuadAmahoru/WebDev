@@ -42,7 +42,8 @@ namespace Assignment1
                         break;
 
                     case 3:
-                        new MainMenu();
+                        MainMenu menu = new MainMenu();
+                        menu.runMainMenu();
                         break;
 
                     case 4:
@@ -55,7 +56,7 @@ namespace Assignment1
                         Console.WriteLine();
                         Console.WriteLine();
                         return false;
-                        break;
+                        
                 }
                 return true;
             }
