@@ -37,11 +37,11 @@ namespace Assignment1
                         break;
 
                     case 2:
-                        Franchise fran = new Franchise();
-                        fran.runFranchiseMenu();
+                        requestStore();
                         break;
 
                     case 3:
+                        
                         Customer cust = new Customer();
                         cust.runCustomerMenu();
                         break;
@@ -56,7 +56,7 @@ namespace Assignment1
                         Console.WriteLine();
                         Console.WriteLine();
                         return false;
-                        break;
+                       
                 }
                 return true;
                 }else
@@ -86,5 +86,60 @@ namespace Assignment1
         {
             Environment.Exit(0);
         }
+        
+        void requestStore()
+        {
+           // Store store;
+           // bool invalid = false;
+            while (true)
+            {
+                Console.Clear();
+                Console.WriteLine("Choose a store Id: \n ");
+                 
+                    var stores = JsonUtility.readJsonFile<List<Store>>("F:\\stores.json");
+                for(int i =0; i<stores.Count; i++)
+                {
+                    Console.WriteLine("\t" + i + 1 + " . " + stores[i].Name);
+                }
+                Console.WriteLine();
+               
+                    int option = getInput(Console.ReadLine());
+                    if (option == -1)
+                    {
+                        Console.WriteLine("The Store ID is invalid, Please enter again");
+                        continue;
+                    }
+                    else
+                    {
+                        switch (option)
+                        {
+                            case 1:
+                                Franchise store1 = new Franchise(stores[option - 1].Name);
+                                store1.runFranchiseMenu();
+                                break;
+                            case 2:
+                                Franchise store2 = new Franchise(stores[option - 1].Name);
+                                store2.runFranchiseMenu();
+                                break;
+                            case 3:
+                                Franchise store3 = new Franchise(stores[option - 1].Name);
+                                store3.runFranchiseMenu();
+                                break;
+                            case 4:
+                                Franchise store4 = new Franchise(stores[option - 1].Name);
+                                store4.runFranchiseMenu();
+                                break;
+                            case 5:
+                                Franchise store5 = new Franchise(stores[option - 1].Name);
+                                store5.runFranchiseMenu();
+                                break;
+                            default :
+                                Console.WriteLine("The Store ID is between 1 and {0},Please enter ID again", stores.Count);
+                                break;
+
+                        }
+                    }
+                
+            }
     }
 }
