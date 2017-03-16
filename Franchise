@@ -8,9 +8,20 @@ namespace Assignment1
 {
     class Franchise : Menu
     {
-      public Franchise()
+     public Franchise()
         {
             displayTitle("Franchise");
+            menuItem.Add("Display Inventory");
+            menuItem.Add("Display Inventory (Treshold)");
+            menuItem.Add("Add New Inventory Item");
+            menuItem.Add("Return To Main Menu");
+            menuItem.Add("Exit");
+            displayList();
+            displayHint();
+        }
+        public Franchise(string title)
+        {
+            displayTitle("Franchise Holder - " + title);
             menuItem.Add("Display Inventory");
             menuItem.Add("Display Inventory (Treshold)");
             menuItem.Add("Add New Inventory Item");
@@ -107,7 +118,8 @@ namespace Assignment1
                         break;
 
                     case 4:
-                        new MainMenu();
+                       MainMenu menu =  new MainMenu();
+                        menu.runMainMenu();
                         break;
                     case 5:
                         quit();
