@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Assignment1
 {
-    public class Store
+      public class Store
     {
+      public string Id { get; set; }
+       public string Name { get; set; }
         
+
     }
 }
