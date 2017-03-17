@@ -1,0 +1,14 @@
+[
+	{
+		 "Id": 1,
+		"Name": "Bundaberg",
+		"CurrentStock": 3,
+		"ReStock" : "True"
+	},
+	{
+		"Id": 2,
+		"Name": "Appletiser",
+		"CurrentStock": 6,
+		"ReStock" : "True"
+	}
+]

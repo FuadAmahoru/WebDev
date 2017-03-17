@@ -1,0 +1,14 @@
+[
+	{
+		 "Id": 9,
+		"Name": "Lift",
+		"CurrentStock": 3,
+		"ReStock" : "True"
+	},
+	{
+		 "Id": 10,
+		"Name": "Apple Juice",
+		"CurrentStock": 2,
+		"ReStock" : "False"
+	}
+]
