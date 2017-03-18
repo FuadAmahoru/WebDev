@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-namespace Assignment1
+using System.IO;
+using Newtonsoft.Json;
+namespace WebA1
 {
     class MainMenu : Menu
     {
        public MainMenu()
         {
+            
             displayTitle("Main Menu");
             menuItem.Add("Owner");
             menuItem.Add("Franchise Owner");
@@ -17,6 +19,7 @@ namespace Assignment1
             menuItem.Add("Quit");
             displayList();
             displayHint();
+               
             
         }
   
@@ -86,7 +89,7 @@ namespace Assignment1
         {
             Environment.Exit(0);
         }
-        
+
         void requestStore()
         {
            // Store store;
@@ -96,14 +99,14 @@ namespace Assignment1
                 Console.Clear();
                 Console.WriteLine("Choose a store Id: \n ");
                  
-                    var stores = JsonUtility.readJsonFile<List<Store>>("F:\\stores.json");
-               for (int i = 0; i < stores.Count; i++)
+                    var stores = JsonUtility.readJsonFile<List<Store>>("F:\\stores.json"
+                        );
+                for(int i =0; i<stores.Count; i++)
                 {
-                    Console.WriteLine("    {0} . {1}" , i+1,stores[i].Name);
+                    Console.WriteLine("    {0} . {1} ",  i+1 ,stores[i].Name);
                 }
                 Console.WriteLine();
-                Console.WriteLine("Please enter an option");
-               
+                Console.WriteLine("Please enter an option : ");
                     int option = getInput(Console.ReadLine());
                     if (option == -1)
                     {
@@ -142,5 +145,8 @@ namespace Assignment1
                     }
                 
             }
+
+           // return
+        }
     }
 }
