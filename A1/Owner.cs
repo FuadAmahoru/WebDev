@@ -97,6 +97,31 @@ namespace WebA1
             }
         }
 
+         void displayStockRequest()
+        {
+            var lines = File.ReadAllLines("C:\\Users\\s3536515\\Desktop\\stockrequest.txt");
+            int count = 0;
+            Console.WriteLine("ID\tStore\tProduct\t\tQuantity\tCurrent Stock\tStock Ava\t");
+            for (int i = 0; i < lines.Length; i++)
+            {
+                string[] fields = lines[i].Split(',');
+                Console.Write("{0,-8}", ++count);
+                for (int j = 0; j < fields.Length; j++)
+                {
+                    switch (j)
+                    {
+                        case 0: Console.Write("{0,-5}", fields[j]);break;
+                        case 1: Console.Write("{0,-10}", fields[j]); break;
+                        case 2: Console.Write("{0,-10}", fields[j]); break;
+                        case 3: Console.Write("{0,-5}", fields[j]); break;
+                        case 4: Console.Write("{0,-5}", fields[j]); break;
+                    }
+                   // Console.Write("{0,-5}",fields[j]);
+                    Console.Write("\t");
+                }
+                Console.WriteLine();
+            }
+        }
         void displayStockRequest()
         {
             StreamReader s = new StreamReader(@"F:\stockrequest.txt");
