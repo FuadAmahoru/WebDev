@@ -1,10 +1,10 @@
-Jack,Bundaberg,3,1
-Jack,Bundaberg,6,1
-Fuad,Aqua Water,4,1
-Fuad,Lipton Ice Tea,5,1
-Joyice,Fanta,2,1
-Joyice,Powerade,5,1
-Jay,Barista,6,1
-Jay,H2Coco,2,1
-Olinda,Lift,3,1
-Olinda,Apple Juice,2,1
+Jack,Bundaberg,3,10,1
+Jack,Bundaberg,6,12,1
+Fuad,Aqua Water,4,6,1
+Fuad,Lipton Ice Tea,5,8,1
+Joyice,Fanta,2,9,1
+Joyice,Powerade,5,6,1
+Jay,Barista,6,4,0
+Jay,H2Coco,2,14,1
+Olinda,Lift,3,7,1
+Olinda,Apple Juice,2,5,1
