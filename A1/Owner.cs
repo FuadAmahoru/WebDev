@@ -97,7 +97,7 @@ namespace WebA1
             }
         }
 
-         void displayStockRequest()
+        void displayStockRequest()
         {
             var lines = File.ReadAllLines("C:\\Users\\s3536515\\Desktop\\stockrequest.txt");
             int count = 0;
@@ -113,7 +113,7 @@ namespace WebA1
                         case 0: Console.Write("{0,-5}", fields[j]);break;
                         case 1: Console.Write("{0,-10}", fields[j]); break;
                         case 2: Console.Write("{0,-10}", fields[j]); break;
-                        case 3: Console.Write("{0,-5}", fields[j]); break;
+                        case 3: Console.Write("{0,-15}", fields[j]); break;
                         case 4: Console.Write("{0,-5}", fields[j]); break;
                     }
                    // Console.Write("{0,-5}",fields[j]);
