@@ -133,6 +133,18 @@ namespace WebA1
                     
                             if (ro[entry-1].ReStock == true)
                             {
+                                for(int i =0; i < ro.Count; i++)
+                        { 
+                            
+                            if(ro[i].ID == entry)
+                            {
+                                List<Product> owners = JsonUtility.readJsonFile<List<Product>>(@"C:\Users\s3536515\Desktop\owners_inventory.json");
+                                for(int j=0; j < owners.Count; j++)
+                                {
+
+                                }
+                            }
+                        }
                                 Console.WriteLine("The Change in the json file has been updated!");
                             }
                             else if (ro[entry - 1].ReStock == false) 
@@ -155,7 +167,6 @@ namespace WebA1
 
                 Console.WriteLine("\n");
             }
-
            void addNewInventoryItem()
         {
             List<Product> list1 = JsonUtility.readJsonFile<List<Product>>(@"F:\owners_inventory.json");
