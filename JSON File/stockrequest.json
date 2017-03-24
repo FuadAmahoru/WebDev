@@ -1,0 +1,33 @@
+[
+	{
+		"Name":"Jack",
+		"product":"Bundaberg",
+		"Quantity":3,
+		"CurrentStock":10,
+		"StockAvailabilty":1
+	},
+	
+	{	
+		"Name":"Jack",
+		"product":"Bundaberg",
+		"Quantity":6,
+		"CurrentStock":12,
+		"StockAvailabilty":1
+	},
+	
+	{	
+		"Name":"Fuad",
+		"product":"Aqua Water",
+		"Quantity":4,
+		"CurrentStock":6,
+		"StockAvailabilty":1
+	},
+	
+	{	
+		"Name":"Fuad",
+		"product":"Lipton Ice Tea",
+		"Quantity":5,
+		"CurrentStock":8,
+		"StockAvailabilty":1
+	}
+]
