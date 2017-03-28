@@ -111,87 +111,96 @@ namespace WebA1
 
         }
 
-        void displayProducts()
+       void displayProducts()
         {
             List<Product> item = JsonUtility.readJsonFile<List<Product>>(getAddress(_store.Id));
-            Console.WriteLine("=================");
-            Console.WriteLine("Inventory      ||");
-            Console.WriteLine("=================");
-            Console.WriteLine("ID\tProduct\t\t\t  Current Stock");
-            Console.WriteLine("____________________________________________________");
-            for(int i=0; i<item.Count;i++) 
+
+
+            int trackingIndex = 0;
+            while (trackingIndex < item.Count)
             {
-                if ((i%5)!=0 )
+                Console.WriteLine("=================");
+                Console.WriteLine("Inventory      ||");
+                Console.WriteLine("=================");
+                Console.WriteLine("ID\tProduct\t\t\t  Current Stock");
+                Console.WriteLine("____________________________________________________");
+
+
+
+
+                var subList = item.Skip(trackingIndex).Take(5); //GetRange(trackingIndex, 5);
+
+
+                foreach (var list in subList)
                 {
-                    Console.WriteLine("{0,-5}\t{1,-8}\t\t{2,3}", item[i].ID, item[i].Name, item[i].CurrentStock);
+                    Console.WriteLine("{0,-5}\t{1,-8}\t\t{2,3}", list.ID, list.Name, list.CurrentStock);
+                }
+                trackingIndex = trackingIndex + 5;
+                Console.WriteLine("[Legend: \'P\' Next Page | \'R\' Return to Menu |\'C\' Complete Transaction]");
+                Console.WriteLine();
+                Console.WriteLine("Enter Item Number to purchase or Function");
+                string prompt = Console.ReadLine();
+                if (prompt.Contains("P"))
+                {
+                    continue;
+                }
+                else if (prompt.Contains("R"))
+                {
+                    this.runCustomerMenu();
+                }
+                else if (prompt.Contains("C"))
+                {
+                    Console.WriteLine("Complete Transaction!!!");
+                    break;
                 }
                 else
                 {
-                    Console.WriteLine("[Legend: \'P\' Next Page | \'R\' Return to Menu |\'C\' Complete Transaction]");
-                    Console.WriteLine();
-                    Console.WriteLine("Enter Item Number to purchase or Function");
-                    string prompt = Console.ReadLine();
-                    if (prompt.Contains("P"))
-                    {
-                        continue;
-                    }
-                    else if (prompt.Contains("R"))
-                    {
-                        this.runCustomerMenu();
-                    }
-                    else if (prompt.Contains("C"))
-                    {
-                        Console.WriteLine("Complete Transaction!!!");
-                        break;
-                    }
-                    else
-                    {
-                        char[] delimter = { ' ' };
-                        int _proId = 0;
-                        int _proQuantity = 0;
-                        var tokens = prompt.Split(delimter);
-                        if (tokens.Length == 2)
-                        {
-                          for(int j = 0; j < tokens.Length; j++)
-                            {
-                                 int test = int.Parse(tokens[j]);
-                                 if (j == 0)
-                                {
-                                      _proId = test;
-                                 }
-                                else
-                                {
-                                     _proQuantity = test;
-                                }
-                             }
 
-                        if (_proId <=item.Count)
-                         {
-                                   for(int k = 0; k < item.Count; k++)
+                    char[] delimter = { ' ' };
+                    int _proId = 0;
+                    int _proQuantity = 0;
+                    var tokens = prompt.Split(delimter);
+                    if (tokens.Length == 2)
+                    {
+                        for (int j = 0; j < tokens.Length; j++)
+                        {
+                            int test = int.Parse(tokens[j]);
+                            if (j == 0)
+                            {
+                                _proId = test;
+                            }
+                            else
+                            {
+                                _proQuantity = test;
+                            }
+                        }
+
+                        if (_proId <= item.Count)
+                        {
+                            for (int k = 0; k < item.Count; k++)
+                            {
+                                if (item[k].ID == _proId)
                                 {
-                                    if (item[k].ID == _proId)
+                                    if (_proQuantity <= item[k].CurrentStock)
                                     {
-                                        if(_proQuantity < item[k].CurrentStock)
-                                        {
-                                            item[k].CurrentStock = (item[k].CurrentStock - _proQuantity);
-                                        }
+                                        item[k].CurrentStock = (item[k].CurrentStock - _proQuantity);
+
                                     }
-                                }
-                                using (StreamWriter file = File.CreateText(@"E:\account.json"))
-                                {
-                                    JsonSerializer serializer = new JsonSerializer();
-                                    serializer.Serialize(file, item);
                                 }
                             }
 
+                            using (StreamWriter file = File.CreateText(getAddress(_store.Id)))
+                            {
+                                JsonSerializer serializer = new JsonSerializer();
+                                serializer.Serialize(file, item);
+                            }
                         }
-                       
                     }
+   
+                    Console.WriteLine("\n");
                 }
-               
-            }
-
-            Console.WriteLine("\n");
+                
+            } 
         }
         void quit()
         {
