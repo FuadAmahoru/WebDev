@@ -11,12 +11,11 @@ namespace WebA1
     {
 
 
-        public static Object readJsonFile<Object>(string location)
+       public static Object readJsonFile<Object>(string location)
         {
 
-            StreamReader r = new StreamReader(location);
-            string json = r.ReadToEnd();
-            
+           
+            string json =  File.ReadAllText(location);
                 var list = JsonConvert.DeserializeObject<Object>(json);
            
           
