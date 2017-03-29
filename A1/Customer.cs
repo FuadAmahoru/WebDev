@@ -111,7 +111,7 @@ namespace WebA1
 
         }
 
-       void displayProducts()
+        void displayProducts()
         {
             List<Product> item = JsonUtility.readJsonFile<List<Product>>(getAddress(_store.Id));
 
@@ -136,12 +136,18 @@ namespace WebA1
                     Console.WriteLine("{0,-5}\t{1,-8}\t\t{2,3}", list.ID, list.Name, list.CurrentStock);
                 }
                 trackingIndex = trackingIndex + 5;
+               
                 Console.WriteLine("[Legend: \'P\' Next Page | \'R\' Return to Menu |\'C\' Complete Transaction]");
                 Console.WriteLine();
                 Console.WriteLine("Enter Item Number to purchase or Function");
                 string prompt = Console.ReadLine();
                 if (prompt.Contains("P"))
                 {
+                    if(trackingIndex > item.Count)
+                    {
+                        Console.WriteLine("No more page!");
+                        trackingIndex = trackingIndex - 5;
+                    }
                     continue;
                 }
                 else if (prompt.Contains("R"))
@@ -195,8 +201,10 @@ namespace WebA1
                                 serializer.Serialize(file, item);
                             }
                         }
+                        trackingIndex = trackingIndex - 5;
+                        continue;
                     }
-   
+                   
                     Console.WriteLine("\n");
                 }
                 
