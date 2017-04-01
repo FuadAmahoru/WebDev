@@ -5,10 +5,22 @@
 		"CurrentStock": 4,
 		"ReStock" : 1
 	},
-	{
-		"Id" : 2,
-		"Name": "Lipton Ice Tea",
-		"CurrentStock": 5,
+  {
+    "Id": 2,
+    "Name": "Lipton Ice Tea",
+    "CurrentStock": 5,
+    "ReStock": 1
+  },
+  {
+    "Id": 3,
+    "Name": "Vital Strength",
+    "CurrentStock": 3,
+    "ReStock": 1
+  },
+  {
+		"Id" : 4,
+		"Name": "Asahi",
+		"CurrentStock": 7,
 		"ReStock" : 1
 	}
 ]

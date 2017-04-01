@@ -5,10 +5,22 @@
 		"CurrentStock": 2,
 		"ReStock" : "True"
 	},
-	{
-		"Id": 2,
-		"Name": "Powerade",
-		"CurrentStock": 5,
-		"ReStock" : "False"
-	}
+  {
+    "Id": 2,
+    "Name": "Powerade",
+    "CurrentStock": 5,
+    "ReStock": "False"
+  },
+  {
+    "Id": 3,
+    "Name": "Fresh Squeesh",
+    "CurrentStock": 5,
+    "ReStock": 1
+  },
+  {
+    "Id": 4,
+    "Name": "JadeAcer",
+    "CurrentStock": 4,
+    "ReStock": 1
+  }
 ]
