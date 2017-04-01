@@ -56,5 +56,65 @@
     "Id": 10,
     "Name": "Apple Juice",
     "CurrentStock": 4
+  },
+  {
+    "Id": 11,
+    "Name": "Vital Strength",
+    "CurrentStock": 3,
+    "ReStock": 1
+  },
+  {
+    "Id": 12,
+    "Name": "Asahi",
+    "CurrentStock": 7,
+    "ReStock": 1
+  },
+  {
+    "Id": 13,
+    "Name": "Hyper Banana Juice",
+    "CurrentStock": 6,
+    "ReStock": 1
+  },
+  {
+    "Id": 14,
+    "Name": "ProON",
+    "CurrentStock": 3,
+    "ReStock": 1
+  },
+  {
+    "Id": 15,
+    "Name": "NongShim",
+    "CurrentStock": 4,
+    "ReStock": 1
+  },
+  {
+    "Id": 16,
+    "Name": "Gatorade",
+    "CurrentStock": 5,
+    "ReStock": 1
+  },
+  {
+    "Id": 17,
+    "Name": "Fresh Squeesh",
+    "CurrentStock": 5,
+    "ReStock": 1
+  },
+  {
+    "Id": 18,
+    "Name": "JadeAcer",
+    "CurrentStock": 4,
+    "ReStock": 1
+  },
+  {
+    "Id": 19,
+    "Name": "Sparkling Water Flavoured",
+    "CurrentStock": 2,
+    "ReStock": 1
+  },
+  {
+    "Id": 20,
+    "Name": "Balance",
+    "CurrentStock": 6,
+    "ReStock": 1
   }
 ]

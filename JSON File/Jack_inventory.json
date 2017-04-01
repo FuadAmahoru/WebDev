@@ -5,10 +5,22 @@
 		"CurrentStock": 3,
 		"ReStock" : 1
 	},
-	{
-		"Id": 2,
-		"Name": "Appletiser",
-		"CurrentStock": 6,
+  {
+    "Id": 2,
+    "Name": "Appletiser",
+    "CurrentStock": 6,
+    "ReStock": 1
+  },
+  {
+    "Id": 3,
+    "Name": "Hyper Banana Juice",
+    "CurrentStock": 6,
+    "ReStock": 1
+  },
+  {
+		"Id" : 4,
+		"Name": "ProON",
+		"CurrentStock": 3,
 		"ReStock" : 1
 	}
 ]
